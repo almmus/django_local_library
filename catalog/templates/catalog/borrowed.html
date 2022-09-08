@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+
+{% if perms.catalog.can_mark_returned %}
+    <h1>Borrowed books</h1>
+
+    <ul>
+
+      {% for book in borrowed_books %}
+      <li>
+        <a href="">{{ num_instances_available1.title }}</a>
+        <p>fkwjf;wle;we</p>
+        <a href="http://127.0.0.1:8000/catalog/book/copy.id/renew/">Renew</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+  
+{% else %}
+    <p> Error! </p>
+{% endif %}   
+
+{% endblock %}
